@@ -42,26 +42,40 @@
       </div>
 
       <div class="template mb-4">
-        <b>PageName.xml</b>: Starter Code
+        <b>PageName.xml</b>: Starter Code, Schema location may vary.
         <pre class="language-xml"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../shared/schemas/ap_hanover_TransactionDefinition_extension.xsd" title="PRODUCTNAME" id="PRODUCT"&gt;
+&lt;collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../shared/schemas/ap_hanover_TransactionDefinition_extension.xsd" title="PRODUCTNAME" id="PRODUCT"&gt;
 &lt;/collection&gt;</code></pre>
       </div>
       
       
       <div class="template mb-4">
         <b>PageName.xml (inside collection tag)</b> : <br/>
-        <b>For page</b> type is PAGE_TYPE in xml file, id is pageName, title can be page name.<br/>
-        <b>For pageElement</b> id is anyting related, type is SECTION_TYPE and legend is SECTION_LABEL in xml, common section labels come under one section.<br/>
-        <b>For fieldElement</b> type is  FIELD_TYPE, uniqueId can be anything related, dictId is DICTIONARY_ID,  label is FIELD_LABEL, id is FIELD_XPATH, defaultValue is same as id, size is FIELD_SIZE, readonly is given from FIELD_TYPE in xml file.  
+        <b>For page</b> type is PAGE_TYPE in excel file, id is pageName(used in ProductName.xml file), title can be page name.<br/>
+        <b>For pageElement</b> id is anyting related, type is SECTION_TYPE and legend is SECTION_LABEL in excel, common section labels come under one section.<br/>
+        <b>For fieldElement</b> type is  FIELD_TYPE, uniqueId can be anything related, dictId is DICTIONARY_ID,  label is FIELD_LABEL, id is FIELD_XPATH, defaultValue is same as id, size is FIELD_SIZE, readonly is given from FIELD_TYPE in excel file.  
         <pre class="language-xml"><code>&lt;page type="" id="" title="" /&gt;
 &lt;pageElement id="" type="" legend="" &gt;
 &lt;fieldElement type="" uniqueId="" dictId="" label="" id="" size="" readonly="" defaultValue="" /&gt;
 &lt;/pageElement&gt;
 &lt;/page&gt;</code></pre>
       </div>
+
+       <div class="template mb-4">
+        <b>Date</b> :  fieldElement having type as date, has inner tag formatMask. 
+        <pre class="language-xml"><code>&lt;fieldElement type="date" dictId="" uniqueId="" label="" id=""&gt;
+&lt;formatMask type="USDateFormat" /&gt;
+&lt;/fieldElement&gt;</code></pre>
+      </div>
       
 
+
+      <div class="template mb-4">
+        <b>SelectList</b> : fieldElement having type as selectlist, has inner tag optionlist, there are 3 readers- custom, static, dynamic. 
+        <pre class="language-xml"><code>&lt;fieldElement type="selectlist" dictId="" uniqueId="" label="" id=""&gt;
+&lt;optionList reader="" source="" target="" /&gt;
+&lt;/fieldElement&gt;</code></pre>
+      </div>
 
     </div>
 
